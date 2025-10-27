@@ -3,6 +3,7 @@ using Microsoft.Playwright;
 using NUnit.Framework;
 using FluentAssertions;
 using Allure.NUnit;
+using Allure.NUnit.Attributes;
 
 namespace SampleWebApp.Tests.BDDTests.StepDefinitions;
 
