@@ -8,7 +8,7 @@ public class AllureSetup
     [OneTimeSetUp]
     public void GlobalSetup()
     {
-        // Set Allure results directory
+        // Set Allure results directory in bin/Debug (will be moved to project root by run-tests.sh)
         var resultsDirectory = Path.Combine(
             TestContext.CurrentContext.TestDirectory,
             "allure-results"
@@ -23,6 +23,7 @@ public class AllureSetup
         }
 
         Console.WriteLine($"Allure results will be saved to: {resultsDirectory}");
+        Console.WriteLine($"(will be moved to project root after test execution)");
     }
 
     [OneTimeTearDown]

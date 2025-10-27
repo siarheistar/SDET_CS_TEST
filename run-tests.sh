@@ -5,7 +5,7 @@
 echo "Starting test execution..."
 
 # Clean previous results
-rm -rf ./SampleWebApp.Tests/bin/Debug/net8.0/allure-results
+rm -rf ./allure-results
 
 # Build the solution
 echo "Building solution..."
@@ -18,6 +18,12 @@ pwsh SampleWebApp.Tests/bin/Debug/net8.0/playwright.ps1 install
 # Run tests
 echo "Running tests..."
 dotnet test --no-build --configuration Debug --logger "console;verbosity=detailed"
+
+# Move allure results from bin/Debug to project root for easier access
+echo "Moving allure results to project root..."
+if [ -d "SampleWebApp.Tests/bin/Debug/net8.0/allure-results" ]; then
+    mv SampleWebApp.Tests/bin/Debug/net8.0/allure-results ./allure-results
+fi
 
 # Generate Allure report
 echo "Generating Allure report..."
@@ -32,12 +38,12 @@ fi
 # Copy history from previous report to preserve trends
 if [ -d "allure-report/history" ]; then
     echo "Preserving test history for trends..."
-    mkdir -p SampleWebApp.Tests/bin/Debug/net8.0/allure-results/history
-    cp -r allure-report/history/* SampleWebApp.Tests/bin/Debug/net8.0/allure-results/history/
+    mkdir -p allure-results/history
+    cp -r allure-report/history/* allure-results/history/
 fi
 
-# Generate report (without --clean to preserve history)
-allure generate SampleWebApp.Tests/bin/Debug/net8.0/allure-results -o allure-report --clean
+# Generate report
+allure generate allure-results -o allure-report --clean
 
 echo ""
 echo "Note: Run tests multiple times to see trends in the Allure report."
