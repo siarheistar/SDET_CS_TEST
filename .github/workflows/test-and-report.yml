@@ -36,8 +36,31 @@ jobs:
     - name: Build solution
       run: dotnet build "sln TodoAppTesting.sln" --configuration Release --no-restore
 
-    - name: Setup Playwright
-      run: pwsh SampleWebApp.Tests/bin/Release/net8.0/playwright.ps1 install --with-deps chromium
+    - name: Install Playwright system dependencies (Ubuntu 24.04 fix)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          libnss3 \
+          libnspr4 \
+          libatk1.0-0 \
+          libatk-bridge2.0-0 \
+          libcups2 \
+          libdrm2 \
+          libdbus-1-3 \
+          libxkbcommon0 \
+          libatspi2.0-0 \
+          libxcomposite1 \
+          libxdamage1 \
+          libxfixes3 \
+          libxrandr2 \
+          libgbm1 \
+          libpango-1.0-0 \
+          libcairo2 \
+          libasound2t64 \
+          libxshmfence1
+
+    - name: Install Playwright browsers
+      run: pwsh SampleWebApp.Tests/bin/Release/net8.0/playwright.ps1 install chromium
 
     - name: Run tests
       run: dotnet test "sln TodoAppTesting.sln" --configuration Release --no-build --logger "console;verbosity=normal"
