@@ -102,4 +102,4 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "🔗 **Report URL:** https://siarheistar.github.io/SDET_CS_TEST/" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "Report will be available in ~1 minute after deployment completes." >> $GITHUB_STEP_SUMMARY
+        echo "Report  will be available in ~1 minute after deployment completes." >> $GITHUB_STEP_SUMMARY
