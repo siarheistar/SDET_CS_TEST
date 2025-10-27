@@ -1,0 +1,105 @@
+name: Run Tests and Publish Allure Report
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore "sln TodoAppTesting.sln"
+
+    - name: Build solution
+      run: dotnet build "sln TodoAppTesting.sln" --configuration Release --no-restore
+
+    - name: Install Playwright browsers
+      run: pwsh SampleWebApp.Tests/bin/Release/net8.0/playwright.ps1 install chromium
+
+    - name: Install Playwright dependencies
+      run: pwsh SampleWebApp.Tests/bin/Release/net8.0/playwright.ps1 install-deps chromium
+
+    - name: Run tests
+      run: dotnet test "sln TodoAppTesting.sln" --configuration Release --no-build --logger "console;verbosity=normal"
+      continue-on-error: true  # Continue even if tests fail to generate report
+
+    - name: Move allure results to project root
+      run: |
+        if [ -d "SampleWebApp.Tests/bin/Release/net8.0/allure-results" ]; then
+          mv SampleWebApp.Tests/bin/Release/net8.0/allure-results ./allure-results
+          echo "Allure results moved to project root"
+          ls -la allure-results | head -10
+        else
+          echo "No allure-results directory found"
+          exit 1
+        fi
+
+    - name: Get Allure history from gh-pages
+      uses: actions/checkout@v4
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+
+    - name: Restore Allure history
+      if: always()
+      run: |
+        if [ -d "gh-pages/history" ]; then
+          echo "Restoring Allure history for trends..."
+          mkdir -p allure-results/history
+          cp -r gh-pages/history/* allure-results/history/
+          echo "History restored successfully"
+        else
+          echo "No previous history found (first run)"
+        fi
+
+    - name: Generate Allure Report
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      with:
+        allure_results: allure-results
+        allure_report: allure-report
+        allure_history: allure-history
+        keep_reports: 20
+
+    - name: Publish to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: always()
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: allure-report
+        keep_files: false
+
+    - name: Add report link to summary
+      if: always()
+      run: |
+        echo "## 📊 Allure Test Report" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "🔗 **Report URL:** https://siarheistar.github.io/SDET_CS_TEST/" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Report will be available in ~1 minute after deployment completes." >> $GITHUB_STEP_SUMMARY

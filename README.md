@@ -2,6 +2,16 @@
 
 Comprehensive testing suite for a Todo web application using C# + Playwright following SDET best practices.
 
+## 📊 Live Test Report
+
+**🔗 [View Allure Report](https://siarheistar.github.io/SDET_CS_TEST/)** - Automatically updated on every push
+
+The report includes:
+- Test execution results
+- Historical trends and statistics
+- Test duration analysis
+- Flaky test detection
+
 ## 🚀 Features
 
 - ✅ **Unit Tests** - Business logic testing with NUnit
