@@ -36,11 +36,8 @@ jobs:
     - name: Build solution
       run: dotnet build "sln TodoAppTesting.sln" --configuration Release --no-restore
 
-    - name: Install Playwright browsers
-      run: pwsh SampleWebApp.Tests/bin/Release/net8.0/playwright.ps1 install chromium
-
-    - name: Install Playwright dependencies
-      run: pwsh SampleWebApp.Tests/bin/Release/net8.0/playwright.ps1 install-deps chromium
+    - name: Setup Playwright
+      run: pwsh SampleWebApp.Tests/bin/Release/net8.0/playwright.ps1 install --with-deps chromium
 
     - name: Run tests
       run: dotnet test "sln TodoAppTesting.sln" --configuration Release --no-build --logger "console;verbosity=normal"
