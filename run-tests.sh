@@ -29,7 +29,21 @@ if ! command -v allure &> /dev/null; then
     exit 1
 fi
 
+# Copy history from previous report to preserve trends
+if [ -d "allure-report/history" ]; then
+    echo "Preserving test history for trends..."
+    mkdir -p SampleWebApp.Tests/bin/Debug/net8.0/allure-results/history
+    cp -r allure-report/history/* SampleWebApp.Tests/bin/Debug/net8.0/allure-results/history/
+fi
+
+# Generate report (without --clean to preserve history)
 allure generate SampleWebApp.Tests/bin/Debug/net8.0/allure-results -o allure-report --clean
+
+echo ""
+echo "Note: Run tests multiple times to see trends in the Allure report."
+echo "Trend history is being preserved between runs."
+echo ""
+
 allure open allure-report
 
 echo "Test execution complete!"
