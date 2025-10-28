@@ -1,0 +1,49 @@
+{
+  "uuid": "13b675a3-3039-435b-902f-ec0cd42d2c1a",
+  "historyId": "e68feef719a41de91a2e6656257c3788",
+  "testCaseId": "ce468b64cd2f46b8d0e57525f3f897a2",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UnitTests.TodoAppUnitTests.DeleteTodo_WithInvalidId_ShouldThrowException()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UnitTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "DeleteTodo_WithInvalidId_ShouldThrowException"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoAppUnitTests"
+    },
+    {
+      "name": "suite",
+      "value": "Unit Tests"
+    }
+  ],
+  "links": [],
+  "name": "DeleteTodo_WithInvalidId_ShouldThrowException",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761606506140,
+  "stop": 1761606506140
+}

@@ -1,0 +1,12 @@
+{
+  "uuid": "f5976ca4-8cce-4c20-b499-c47a816e9c9d",
+  "name": "SampleWebApp.Tests.UITests.TodoUITests.AddTodo_WithValidText_ShouldDisplayInList",
+  "children": [
+    "83567eba-f5de-4817-bb2e-a616b687cc1d"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1761606502134,
+  "stop": 1761606502392
+}

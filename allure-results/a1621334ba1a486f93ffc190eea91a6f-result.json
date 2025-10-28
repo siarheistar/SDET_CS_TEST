@@ -1,0 +1,49 @@
+{
+  "uuid": "e5c6f96a-eaa2-4773-a97c-0bcd90df6142",
+  "historyId": "ae557c79f9278ec21e7ed0a5110571cd",
+  "testCaseId": "554e6f411d974cb764af6612d9fa07a7",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.FilterActive_ShouldShowOnlyActiveTodos()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#10"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "FilterActive_ShouldShowOnlyActiveTodos"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "FilterActive_ShouldShowOnlyActiveTodos",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761606503467,
+  "stop": 1761606504033
+}

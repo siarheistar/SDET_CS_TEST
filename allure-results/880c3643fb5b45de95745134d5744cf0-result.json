@@ -1,0 +1,49 @@
+{
+  "uuid": "0f40e4c7-986c-4e64-b0e3-7ee7ae8d13b3",
+  "historyId": "081168efd1baa3587502da327946e079",
+  "testCaseId": "abcd7768e2548a4865c71ee3a0d5f98b",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.AddTodo_WithEmptyText_ShouldNotAddTodo()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#9"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddTodo_WithEmptyText_ShouldNotAddTodo"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "AddTodo_WithEmptyText_ShouldNotAddTodo",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761606352560,
+  "stop": 1761606352801
+}

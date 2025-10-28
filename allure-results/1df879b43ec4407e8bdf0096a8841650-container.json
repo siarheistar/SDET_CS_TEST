@@ -1,0 +1,24 @@
+{
+  "uuid": "5e6bffd2-2ccc-43a3-8c53-ebe6e99b1bff",
+  "name": "SampleWebApp.Tests.UITests.TodoUITests",
+  "children": [
+    "1a9cb5bc-ea78-4839-8b98-7f9a615c47c0",
+    "2acac590-a6c9-4dc5-8570-bb0c9eddbb44",
+    "0f40e4c7-986c-4e64-b0e3-7ee7ae8d13b3",
+    "129251d2-b4f7-4026-9332-88f1de5aaade",
+    "93e3c6c7-4d24-4df6-96eb-3e9a9e86f858",
+    "12e53599-9a62-4494-b044-0d53f033238b",
+    "2b4fb8c3-54df-41b2-b7a9-4e3bdf9517c3",
+    "d83244c1-58b3-4c5b-996f-c43feaf5d035",
+    "cdbdb256-f490-4578-8496-165b14fe58a4",
+    "3273f675-fdf3-432c-abc8-49963c239e95",
+    "7c8fd009-9689-431a-8715-a25a8055b09c",
+    "8b3e9d01-338e-49b8-b06c-bdc9b759eb83",
+    "cbc0f37b-5994-4e4a-a2d1-d02121e4ec63"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1761606351660,
+  "stop": 1761606356735
+}

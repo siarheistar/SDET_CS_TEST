@@ -1,0 +1,49 @@
+{
+  "uuid": "bfbada15-984c-4dc4-995d-4317bc4fd17c",
+  "historyId": "0b1d28441e65e912972215e36272282a",
+  "testCaseId": "b10057f87b2e077cfec02466e2533837",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UnitTests.TodoAppUnitTests.GetActiveCount_ShouldReturnCorrectCount()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UnitTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "GetActiveCount_ShouldReturnCorrectCount"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoAppUnitTests"
+    },
+    {
+      "name": "suite",
+      "value": "Unit Tests"
+    }
+  ],
+  "links": [],
+  "name": "GetActiveCount_ShouldReturnCorrectCount",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761606506142,
+  "stop": 1761606506142
+}

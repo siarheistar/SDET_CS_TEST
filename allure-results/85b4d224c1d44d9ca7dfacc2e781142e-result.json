@@ -1,0 +1,49 @@
+{
+  "uuid": "4e9a6997-7a47-419d-a2f5-d74960c820ac",
+  "historyId": "771085000116f6a553c3ce38fdd3e957",
+  "testCaseId": "11adc8670a025b6f6700c7a82e241c9c",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.ToggleTodo_ShouldMarkAsCompleted()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#10"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "ToggleTodo_ShouldMarkAsCompleted"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "ToggleTodo_ShouldMarkAsCompleted",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761606505767,
+  "stop": 1761606506117
+}

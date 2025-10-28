@@ -1,0 +1,49 @@
+{
+  "uuid": "d89ca336-7b5e-47fc-9985-c8d32d41b890",
+  "historyId": "69f93d5c0d7394f9aaf6418f2e8d0019",
+  "testCaseId": "3cbcbb0feb4c70cdd0f6384d7b39e006",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UnitTests.TodoAppUnitTests.DeleteTodo_WithValidId_ShouldRemoveTodo()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UnitTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "DeleteTodo_WithValidId_ShouldRemoveTodo"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoAppUnitTests"
+    },
+    {
+      "name": "suite",
+      "value": "Unit Tests"
+    }
+  ],
+  "links": [],
+  "name": "DeleteTodo_WithValidId_ShouldRemoveTodo",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761606531931,
+  "stop": 1761606531932
+}

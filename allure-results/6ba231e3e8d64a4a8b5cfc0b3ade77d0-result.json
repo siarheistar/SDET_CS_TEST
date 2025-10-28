@@ -1,0 +1,49 @@
+{
+  "uuid": "0cd6a4ef-4770-42b9-87fd-8a5ff27f1dc6",
+  "historyId": "d9091a5be5b0ddc125bd11719b6b6fa5",
+  "testCaseId": "5aeb299e5bfd9d9bf7e54a2a6ced2813",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UnitTests.TodoAppUnitTests.AddTodo_MultipleTodos_ShouldAssignUniqueIds()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UnitTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddTodo_MultipleTodos_ShouldAssignUniqueIds"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoAppUnitTests"
+    },
+    {
+      "name": "suite",
+      "value": "Unit Tests"
+    }
+  ],
+  "links": [],
+  "name": "AddTodo_MultipleTodos_ShouldAssignUniqueIds",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761606207225,
+  "stop": 1761606207229
+}

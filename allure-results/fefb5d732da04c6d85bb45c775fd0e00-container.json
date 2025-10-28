@@ -1,0 +1,12 @@
+{
+  "uuid": "671d7017-e84d-4a02-b224-d4cfbddee48e",
+  "name": "SampleWebApp.Tests.UITests.TodoUITests.LocalStorage_ShouldPersistTodos",
+  "children": [
+    "64da2fb9-e885-4610-8f84-e43f9a72c2cd"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1761606424270,
+  "stop": 1761606424640
+}

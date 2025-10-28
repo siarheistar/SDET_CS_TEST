@@ -1,0 +1,49 @@
+{
+  "uuid": "740503f8-eaea-4e9c-a5d0-f82b265d5a47",
+  "historyId": "ab820269d2d7746b89d78d1ab9cbff07",
+  "testCaseId": "58c986099331532f86c08061e5e3d651",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.TodoCounter_AfterCompleting_ShouldDecrease()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#10"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TodoCounter_AfterCompleting_ShouldDecrease"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "TodoCounter_AfterCompleting_ShouldDecrease",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761606206220,
+  "stop": 1761606206605
+}

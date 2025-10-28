@@ -1,0 +1,12 @@
+{
+  "uuid": "c0970b9a-4a11-4a1e-b8a3-6f63423b8e66",
+  "name": "SampleWebApp.Tests.UITests.TodoUITests.AddTodo_ShouldClearInputField",
+  "children": [
+    "2acac590-a6c9-4dc5-8570-bb0c9eddbb44"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1761606352307,
+  "stop": 1761606352560
+}
