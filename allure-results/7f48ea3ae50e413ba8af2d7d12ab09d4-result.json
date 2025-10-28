@@ -1,0 +1,49 @@
+{
+  "uuid": "1aa2d44a-f141-4ce4-969e-9fcded626db4",
+  "historyId": "a45f0d5f26bdfe0b3d1e15df336ec3db",
+  "testCaseId": "657a6f60ede49de9923d82c69d031b2e",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UnitTests.TodoAppUnitTests.ToggleTodo_WithValidId_ShouldToggleCompletionStatus()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UnitTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "ToggleTodo_WithValidId_ShouldToggleCompletionStatus"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoAppUnitTests"
+    },
+    {
+      "name": "suite",
+      "value": "Unit Tests"
+    }
+  ],
+  "links": [],
+  "name": "ToggleTodo_WithValidId_ShouldToggleCompletionStatus",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761612355203,
+  "stop": 1761612355203
+}

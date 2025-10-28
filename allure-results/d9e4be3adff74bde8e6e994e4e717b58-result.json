@@ -1,0 +1,49 @@
+{
+  "uuid": "e9f7bf04-088d-432b-a5a8-194ea24b0191",
+  "historyId": "3271a26a62bdbb4d1b53942053daa50a",
+  "testCaseId": "48707a90eb494634d71a0c5ca3867bdf",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UnitTests.TodoAppUnitTests.ToggleTodo_WithInvalidId_ShouldThrowException()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UnitTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "ToggleTodo_WithInvalidId_ShouldThrowException"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoAppUnitTests"
+    },
+    {
+      "name": "suite",
+      "value": "Unit Tests"
+    }
+  ],
+  "links": [],
+  "name": "ToggleTodo_WithInvalidId_ShouldThrowException",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761612355202,
+  "stop": 1761612355203
+}

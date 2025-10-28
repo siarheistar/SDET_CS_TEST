@@ -1,0 +1,140 @@
+{
+  "uuid": "89c6223b-9340-4e25-8a94-3de67258ea02",
+  "historyId": "74f9bae86348269c1753ef6ec41f421c",
+  "testCaseId": "9cac1c0302e9981ce136276c7ee7ba99",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.FilterCompleted_ShouldShowOnlyCompletedTodos()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#10"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "FilterCompleted_ShouldShowOnlyCompletedTodos"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "FilterCompleted_ShouldShowOnlyCompletedTodos",
+  "status": "passed",
+  "stage": "finished",
+  "description": "Verify that the Completed filter shows only completed todos",
+  "steps": [
+    {
+      "name": "Setup test environment",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Initial Page State",
+          "source": "7ec763dd-0676-4ae7-b70c-d99e78d8e218-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1761612349827,
+      "stop": 1761612350001
+    },
+    {
+      "name": "Add one active and one completed todo",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Before filtering",
+          "source": "eaf340ae-f13e-47a5-9431-2fbb46467387-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1761612350002,
+      "stop": 1761612350403
+    },
+    {
+      "name": "Click Completed filter",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "After applying Completed filter",
+          "source": "84aa6523-cdea-4e04-bdbf-c52825269ba9-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1761612350403,
+      "stop": 1761612350671
+    },
+    {
+      "name": "Count visible todos",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1761612350671,
+      "stop": 1761612350673
+    },
+    {
+      "name": "Get visible todo text",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1761612350673,
+      "stop": 1761612350675
+    },
+    {
+      "name": "Verify only one completed todo is visible",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1761612350675,
+      "stop": 1761612350675
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Final Page State",
+      "source": "4eb88c56-6566-4118-9661-2b1959242a1d-attachment.png",
+      "type": "image/png"
+    },
+    {
+      "name": "Test Execution Video",
+      "source": "74ac8f5a-72df-42a6-befd-89b9593f9fc0-attachment.webm",
+      "type": "video/webm"
+    }
+  ],
+  "parameters": [],
+  "start": 1761612349772,
+  "stop": 1761612350895
+}

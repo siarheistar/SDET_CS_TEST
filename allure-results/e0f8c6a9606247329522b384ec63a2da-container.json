@@ -1,0 +1,12 @@
+{
+  "uuid": "237990e3-c94b-45c4-95f4-e6e60ba43a2a",
+  "name": "SampleWebApp.Tests.UITests.TodoUITests.ToggleTodo_ShouldMarkAsCompleted",
+  "children": [
+    "110094a9-a199-48f9-82d2-159edc0d0ccb"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1761612354168,
+  "stop": 1761612355186
+}

@@ -1,0 +1,130 @@
+{
+  "uuid": "b4129939-bb7e-41a4-89e8-9f7475180e2e",
+  "historyId": "3a53a4aefe2a613d0df51d5e626eb877",
+  "testCaseId": "924ed61ce9e8ae7e37fa4543d804b23e",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.AddTodo_WithValidText_ShouldDisplayInList()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#10"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddTodo_WithValidText_ShouldDisplayInList"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "AddTodo_WithValidText_ShouldDisplayInList",
+  "status": "passed",
+  "stage": "finished",
+  "description": "Verify that adding a todo with valid text displays it in the list",
+  "steps": [
+    {
+      "name": "Setup test environment",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Initial Page State",
+          "source": "66e33560-20b5-410f-8ae0-939f7942f9e5-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1761612345566,
+      "stop": 1761612345732
+    },
+    {
+      "name": "Enter todo text 'Buy groceries'",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "After entering text",
+          "source": "3b93cb24-64fd-4ebd-9843-81cf8c50ac9a-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1761612345732,
+      "stop": 1761612345867
+    },
+    {
+      "name": "Click Add button",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "After clicking Add",
+          "source": "6e3d2e3b-fb35-4d9e-9505-592336f712c4-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1761612345867,
+      "stop": 1761612346133
+    },
+    {
+      "name": "Get todo item text",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1761612346133,
+      "stop": 1761612346137
+    },
+    {
+      "name": "Verify todo text is 'Buy groceries'",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1761612346137,
+      "stop": 1761612346138
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Final Page State",
+      "source": "ba1726e9-27f8-4ab2-bae3-295f5db35590-attachment.png",
+      "type": "image/png"
+    },
+    {
+      "name": "Test Execution Video",
+      "source": "e90b1ecd-2907-463e-bdaa-c4664de6ff57-attachment.webm",
+      "type": "video/webm"
+    }
+  ],
+  "parameters": [],
+  "start": 1761612345506,
+  "stop": 1761612346362
+}

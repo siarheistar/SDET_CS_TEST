@@ -1,0 +1,49 @@
+{
+  "uuid": "334208c7-2db9-4ad4-b5a1-bd754b0fef29",
+  "historyId": "d5fdc2e02287217f427eefd7cc0d74dd",
+  "testCaseId": "e3a0a226cb644a2504b6b62a7152403c",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UnitTests.TodoAppUnitTests.AddTodo_WithValidText_ShouldAddTodoToList()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UnitTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddTodo_WithValidText_ShouldAddTodoToList"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoAppUnitTests"
+    },
+    {
+      "name": "suite",
+      "value": "Unit Tests"
+    }
+  ],
+  "links": [],
+  "name": "AddTodo_WithValidText_ShouldAddTodoToList",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1761612355197,
+  "stop": 1761612355197
+}

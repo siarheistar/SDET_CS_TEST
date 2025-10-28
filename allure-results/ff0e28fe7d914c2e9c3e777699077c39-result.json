@@ -1,0 +1,140 @@
+{
+  "uuid": "6def6dd2-7a96-4c67-b8f4-ba647b8416ac",
+  "historyId": "d4ae494899423e58e2a7a18aa1bf4e38",
+  "testCaseId": "11b9d483c34849be91b3b0a142a8429c",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.LocalStorage_ShouldPersistTodos()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#10"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "LocalStorage_ShouldPersistTodos"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "LocalStorage_ShouldPersistTodos",
+  "status": "passed",
+  "stage": "finished",
+  "description": "Verify that todos persist in localStorage after page reload",
+  "steps": [
+    {
+      "name": "Setup test environment",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Initial Page State",
+          "source": "d62a0c45-96c6-4b46-84c6-4c8f948f1f11-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1761612350953,
+      "stop": 1761612351135
+    },
+    {
+      "name": "Add a todo 'Persistent task'",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Before reload",
+          "source": "a3fd8c47-dd85-485d-a34f-47a8797718b8-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1761612351136,
+      "stop": 1761612351419
+    },
+    {
+      "name": "Reload the page",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "After reload",
+          "source": "96544f00-f911-4a49-807e-2ce5845816c0-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1761612351419,
+      "stop": 1761612351654
+    },
+    {
+      "name": "Count todos after reload",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1761612351654,
+      "stop": 1761612351664
+    },
+    {
+      "name": "Get todo text after reload",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1761612351664,
+      "stop": 1761612351666
+    },
+    {
+      "name": "Verify todo persisted",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1761612351666,
+      "stop": 1761612351667
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Final Page State",
+      "source": "02bae3f1-04a0-40ab-811a-e9a231d29aea-attachment.png",
+      "type": "image/png"
+    },
+    {
+      "name": "Test Execution Video",
+      "source": "14856431-0ded-4d5c-9b63-33f22ab49e01-attachment.webm",
+      "type": "video/webm"
+    }
+  ],
+  "parameters": [],
+  "start": 1761612350896,
+  "stop": 1761612351888
+}
