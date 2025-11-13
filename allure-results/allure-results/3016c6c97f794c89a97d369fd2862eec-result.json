@@ -1,0 +1,114 @@
+{
+  "uuid": "7c23e0de-a1df-4e80-8cd1-61d2606db2d8",
+  "historyId": "081168efd1baa3587502da327946e079",
+  "testCaseId": "abcd7768e2548a4865c71ee3a0d5f98b",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.AddTodo_WithEmptyText_ShouldNotAddTodo()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#3"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddTodo_WithEmptyText_ShouldNotAddTodo"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "AddTodo_WithEmptyText_ShouldNotAddTodo",
+  "status": "passed",
+  "stage": "finished",
+  "description": "Verify that adding a todo with empty text does not add it to the list",
+  "steps": [
+    {
+      "name": "Setup test environment",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Initial Page State",
+          "source": "1afafcfb-d7ae-467b-a55a-c2e2cb76e351-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043342391,
+      "stop": 1763043342567
+    },
+    {
+      "name": "Click Add button without entering text",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "After clicking Add with empty input",
+          "source": "05c81821-fe4c-4c64-a6af-3e13fb6c4d4d-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043342567,
+      "stop": 1763043342833
+    },
+    {
+      "name": "Count todo items",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043342833,
+      "stop": 1763043342835
+    },
+    {
+      "name": "Verify todo count is 0",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043342835,
+      "stop": 1763043342835
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Final Page State",
+      "source": "1de4e1a2-f1ca-4c83-b7f2-d90cca70a81c-attachment.png",
+      "type": "image/png"
+    },
+    {
+      "name": "Test Execution Video",
+      "source": "6d84c29e-9b84-4469-8035-dbbf347332ba-attachment.webm",
+      "type": "video/webm"
+    }
+  ],
+  "parameters": [],
+  "start": 1763043342335,
+  "stop": 1763043343114
+}

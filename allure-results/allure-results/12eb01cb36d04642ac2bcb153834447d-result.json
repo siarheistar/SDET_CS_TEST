@@ -1,0 +1,49 @@
+{
+  "uuid": "f93b1512-1d67-407f-9753-a0eb27a94a25",
+  "historyId": "b243225fbf81c8555b1abfc529d29628",
+  "testCaseId": "c0a9d8ce1a4a40474c66f7ecf6130d93",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UnitTests.TodoAppUnitTests.ClearCompleted_ShouldRemoveOnlyCompletedTodos()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UnitTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "ClearCompleted_ShouldRemoveOnlyCompletedTodos"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoAppUnitTests"
+    },
+    {
+      "name": "suite",
+      "value": "Unit Tests"
+    }
+  ],
+  "links": [],
+  "name": "ClearCompleted_ShouldRemoveOnlyCompletedTodos",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1763043352931,
+  "stop": 1763043352932
+}

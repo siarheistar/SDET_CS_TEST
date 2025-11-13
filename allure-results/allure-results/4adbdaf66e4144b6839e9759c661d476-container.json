@@ -1,0 +1,12 @@
+{
+  "uuid": "a9cf53bf-f168-4367-abc8-9cd42718aeba",
+  "name": "SampleWebApp.Tests.UITests.TodoUITests.TodoCounter_AfterCompleting_ShouldDecrease",
+  "children": [
+    "2b26e1a9-6b4b-4bfd-8d55-ff2dfefec19f"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1763043261724,
+  "stop": 1763043261726
+}

@@ -2,7 +2,6 @@ using TechTalk.SpecFlow;
 using Microsoft.Playwright;
 using NUnit.Framework;
 using FluentAssertions;
-using SampleWebApp.Tests.Helpers;
 
 namespace SampleWebApp.Tests.BDDTests.StepDefinitions;
 
@@ -40,14 +39,13 @@ public class TodoManagementSteps
     {
         if (_page != null)
         {
-            await AllureHelper.AttachScreenshot(_page, "Scenario End State");
-
             var videoPath = await _page.Video?.PathAsync();
             await _page.CloseAsync();
 
+            // Just log video path, don't try to attach to Allure in BDD context
             if (videoPath != null)
             {
-                await AllureHelper.AttachVideo(videoPath, "Scenario Execution Video");
+                Console.WriteLine($"Video saved to: {videoPath}");
             }
         }
 
@@ -60,7 +58,6 @@ public class TodoManagementSteps
     public async Task GivenTheTodoApplicationIsLoaded()
     {
         await _page!.GotoAsync(_appUrl);
-        await AllureHelper.AttachScreenshot(_page, "Application loaded");
     }
 
     [Given(@"the todo list is empty")]
@@ -68,7 +65,6 @@ public class TodoManagementSteps
     {
         await _page!.EvaluateAsync("localStorage.clear()");
         await _page.ReloadAsync();
-        await AllureHelper.AttachScreenshot(_page, "Empty todo list");
     }
 
     [Given(@"I have added a todo ""(.*)""")]
@@ -77,7 +73,6 @@ public class TodoManagementSteps
         await _page!.FillAsync("#todoInput", todoText);
         await _page.ClickAsync("#addBtn");
         await Task.Delay(100);
-        await AllureHelper.AttachScreenshot(_page, $"Todo '{todoText}' added");
     }
 
     [Given(@"I have added the following todos:")]
@@ -99,18 +94,14 @@ public class TodoManagementSteps
                 await Task.Delay(50);
             }
         }
-        await AllureHelper.AttachScreenshot(_page, "Multiple todos added");
-        AllureHelper.AttachJson("Todos Data", table.Rows.Select(r => new { Text = r["Text"], Completed = r["Completed"] }));
     }
 
     [When(@"I add a todo with text ""(.*)""")]
     public async Task WhenIAddATodoWithText(string todoText)
     {
         await _page!.FillAsync("#todoInput", todoText);
-        await AllureHelper.AttachScreenshot(_page, "Text entered");
         await _page.ClickAsync("#addBtn");
         await Task.Delay(100);
-        await AllureHelper.AttachScreenshot(_page, "Todo added");
     }
 
     [When(@"I mark the todo ""(.*)"" as completed")]
@@ -119,7 +110,6 @@ public class TodoManagementSteps
         var checkbox = _page!.Locator($".todo-item span:text('{todoText}')").Locator("..").Locator("input[type='checkbox']");
         await checkbox.CheckAsync();
         await Task.Delay(100);
-        await AllureHelper.AttachScreenshot(_page, $"Todo '{todoText}' marked as completed");
     }
 
     [When(@"I delete the todo ""(.*)""")]
@@ -128,7 +118,6 @@ public class TodoManagementSteps
         var deleteButton = _page!.Locator($".todo-item span:text('{todoText}')").Locator("..").Locator("button");
         await deleteButton.ClickAsync();
         await Task.Delay(100);
-        await AllureHelper.AttachScreenshot(_page, $"Todo '{todoText}' deleted");
     }
 
     [When(@"I filter by ""(.*)""")]
@@ -136,7 +125,6 @@ public class TodoManagementSteps
     {
         await _page!.ClickAsync($"button:text('{filter}')");
         await Task.Delay(100);
-        await AllureHelper.AttachScreenshot(_page, $"Filter '{filter}' applied");
     }
 
     [When(@"I clear completed todos")]
@@ -144,7 +132,6 @@ public class TodoManagementSteps
     {
         await _page!.ClickAsync("#clearCompleted");
         await Task.Delay(100);
-        await AllureHelper.AttachScreenshot(_page, "Completed todos cleared");
     }
 
     [Then(@"the todo ""(.*)"" should be displayed in the list")]
@@ -153,7 +140,6 @@ public class TodoManagementSteps
         var todo = _page!.Locator($".todo-item span:text('{todoText}')");
         var count = await todo.CountAsync();
         count.Should().BeGreaterThan(0);
-        await AllureHelper.AttachScreenshot(_page, $"Todo '{todoText}' is displayed");
     }
 
     [Then(@"the todo ""(.*)"" should be marked as completed")]
@@ -162,7 +148,6 @@ public class TodoManagementSteps
         var todoItem = _page!.Locator($".todo-item span:text('{todoText}')").Locator("..");
         var className = await todoItem.GetAttributeAsync("class");
         className.Should().Contain("completed");
-        await AllureHelper.AttachScreenshot(_page, $"Todo '{todoText}' is completed");
     }
 
     [Then(@"the todo ""(.*)"" should not be in the list")]
@@ -171,7 +156,6 @@ public class TodoManagementSteps
         var todo = _page!.Locator($".todo-item span:text('{todoText}')");
         var count = await todo.CountAsync();
         count.Should().Be(0);
-        await AllureHelper.AttachScreenshot(_page, $"Todo '{todoText}' is not in list");
     }
 
     [Then(@"the remaining tasks count should be (.*)")]
@@ -179,8 +163,6 @@ public class TodoManagementSteps
     {
         var counterText = await _page!.Locator("#todoCount").TextContentAsync();
         counterText.Should().Contain($"{expectedCount} task");
-        await AllureHelper.AttachScreenshot(_page, $"Task count: {expectedCount}");
-        AllureHelper.AttachText("Counter Text", counterText ?? "null");
     }
 
     [Then(@"I should see (.*) todos in the list")]
@@ -188,7 +170,6 @@ public class TodoManagementSteps
     {
         var count = await _page!.Locator(".todo-item").CountAsync();
         count.Should().Be(expectedCount);
-        await AllureHelper.AttachScreenshot(_page, $"Visible todos: {expectedCount}");
     }
 
     [Then(@"all displayed todos should be active")]
@@ -196,7 +177,6 @@ public class TodoManagementSteps
     {
         var completedCount = await _page!.Locator(".todo-item.completed").CountAsync();
         completedCount.Should().Be(0);
-        await AllureHelper.AttachScreenshot(_page, "All todos are active");
     }
 
     [Then(@"all displayed todos should be completed")]
@@ -205,7 +185,6 @@ public class TodoManagementSteps
         var totalCount = await _page!.Locator(".todo-item").CountAsync();
         var completedCount = await _page.Locator(".todo-item.completed").CountAsync();
         completedCount.Should().Be(totalCount);
-        await AllureHelper.AttachScreenshot(_page, "All todos are completed");
     }
 
     [Then(@"the todo count should be (.*)")]
@@ -213,6 +192,5 @@ public class TodoManagementSteps
     {
         var count = await _page!.Locator(".todo-item").CountAsync();
         count.Should().Be(expectedCount);
-        await AllureHelper.AttachScreenshot(_page, $"Total todos: {expectedCount}");
     }
 }

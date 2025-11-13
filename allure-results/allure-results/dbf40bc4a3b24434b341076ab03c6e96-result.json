@@ -1,0 +1,49 @@
+{
+  "uuid": "7a3a0dda-2903-4ee3-859f-d52bbe29bb3f",
+  "historyId": "9b4ef1717001b73abc27799f73ad8845",
+  "testCaseId": "4f36a1c1780308bc783f64d8c07d740d",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UnitTests.TodoAppUnitTests.AddTodo_WithEmptyText_ShouldThrowException()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UnitTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddTodo_WithEmptyText_ShouldThrowException"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoAppUnitTests"
+    },
+    {
+      "name": "suite",
+      "value": "Unit Tests"
+    }
+  ],
+  "links": [],
+  "name": "AddTodo_WithEmptyText_ShouldThrowException",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1763043352923,
+  "stop": 1763043352929
+}

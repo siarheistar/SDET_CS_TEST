@@ -1,0 +1,114 @@
+{
+  "uuid": "c87d79bc-8ba3-402b-9ba5-02292ae92569",
+  "historyId": "65c9d2bad5419e473b7f1b561a6d06ae",
+  "testCaseId": "1f9b0a742505bc142c0a84cdaeeae1af",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.TodoCounter_ShouldDisplayCorrectCount()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#3"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TodoCounter_ShouldDisplayCorrectCount"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "TodoCounter_ShouldDisplayCorrectCount",
+  "status": "passed",
+  "stage": "finished",
+  "description": "Verify that the todo counter displays the correct count",
+  "steps": [
+    {
+      "name": "Setup test environment",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Initial Page State",
+          "source": "a36f1c24-c00f-4867-9c69-3a9a143a7437-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043351172,
+      "stop": 1763043351353
+    },
+    {
+      "name": "Add two todos",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Two todos added",
+          "source": "f67a7d14-b619-42b1-aaa6-03134dd2a777-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043351354,
+      "stop": 1763043351677
+    },
+    {
+      "name": "Get counter text",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043351677,
+      "stop": 1763043351679
+    },
+    {
+      "name": "Verify counter shows '2 tasks left'",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043351679,
+      "stop": 1763043351679
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Final Page State",
+      "source": "060ce1c2-6d4d-4bc8-b008-63d55a4e9105-attachment.png",
+      "type": "image/png"
+    },
+    {
+      "name": "Test Execution Video",
+      "source": "9ae1c17e-675a-4a29-bd53-14e184012e7f-attachment.webm",
+      "type": "video/webm"
+    }
+  ],
+  "parameters": [],
+  "start": 1763043351112,
+  "stop": 1763043351912
+}
