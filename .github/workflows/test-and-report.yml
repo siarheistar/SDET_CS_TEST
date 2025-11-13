@@ -119,12 +119,18 @@ jobs:
         RUN_DIR="${{ github.run_number }}"
 
         # Clone gh-pages to separate directory
-        git clone --depth=1 --branch=gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages-deploy || mkdir -p gh-pages-deploy
+        git clone --depth=1 --branch=gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages-deploy || git init gh-pages-deploy
         cd gh-pages-deploy
+
+        # Remove everything except run directories and history
+        find . -maxdepth 1 ! -name '.' ! -name '..' ! -name '.git' ! -name '[0-9]*' ! -name 'history' -exec rm -rf {} + 2>/dev/null || true
 
         # Create run subdirectory
         mkdir -p "$RUN_DIR"
         cp -r ../allure-report/* "$RUN_DIR/"
+
+        # Add .nojekyll
+        touch .nojekyll
 
         # Create/update index.html
         cat > index.html << 'EOF'
