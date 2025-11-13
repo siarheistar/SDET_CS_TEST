@@ -118,14 +118,13 @@ jobs:
       run: |
         RUN_DIR="${{ github.run_number }}"
 
-        # Checkout gh-pages
-        git fetch origin gh-pages || true
-        git checkout gh-pages || git checkout --orphan gh-pages
-        git pull origin gh-pages || true
+        # Clone gh-pages to separate directory
+        git clone --depth=1 --branch=gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages-deploy || mkdir -p gh-pages-deploy
+        cd gh-pages-deploy
 
         # Create run subdirectory
         mkdir -p "$RUN_DIR"
-        cp -r allure-report/* "$RUN_DIR/"
+        cp -r ../allure-report/* "$RUN_DIR/"
 
         # Create/update index.html
         cat > index.html << 'EOF'
