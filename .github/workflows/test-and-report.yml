@@ -194,11 +194,9 @@ jobs:
 
         # Update all existing run directories with navigation banner
         for dir in $(ls -d [0-9]* 2>/dev/null); do
-          if [ -f "$dir/index.html" ] && ! grep -q "home-banner" "$dir/index.html"; then
-            echo "Adding banner to run #$dir"
-
-            # Create custom-banner.css
-            cat > "$dir/custom-banner.css" << 'EOFCSS'
+          # Always update/create custom-banner.css to ensure consistency
+          echo "Updating banner CSS for run #$dir"
+          cat > "$dir/custom-banner.css" << 'EOFCSS'
         .home-banner {
           position: fixed;
           top: 0;
@@ -243,7 +241,9 @@ jobs:
         body { padding-top: 50px !important; }
         EOFCSS
 
-            # Add banner to index.html
+          # Add banner to index.html if not already present
+          if [ -f "$dir/index.html" ] && ! grep -q "home-banner" "$dir/index.html"; then
+            echo "Adding banner HTML to run #$dir"
             sed -i.bak '/<head>/a\
         <link rel="stylesheet" href="custom-banner.css">\
         <script>\
