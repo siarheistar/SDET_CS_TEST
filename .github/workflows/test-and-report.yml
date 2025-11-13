@@ -87,14 +87,20 @@ jobs:
         ref: gh-pages
         path: gh-pages
 
-    - name: Restore Allure history
+    - name: Restore Allure history from latest report
       if: always()
       run: |
-        if [ -d "gh-pages/history" ]; then
-          echo "Restoring Allure history for trends..."
+        # Try to restore history from the latest report subdirectory
+        if [ -d "gh-pages/latest/history" ]; then
+          echo "Restoring Allure history from latest report..."
+          mkdir -p allure-results/history
+          cp -r gh-pages/latest/history/* allure-results/history/
+          echo "History restored successfully from latest report"
+        elif [ -d "gh-pages/history" ]; then
+          echo "Restoring Allure history from old location..."
           mkdir -p allure-results/history
           cp -r gh-pages/history/* allure-results/history/
-          echo "History restored successfully"
+          echo "History restored successfully from old location"
         else
           echo "No previous history found (first run)"
         fi
@@ -134,6 +140,12 @@ jobs:
         destination_dir: ${{ github.run_number }}  # Deploy to run number directory
         commit_message: 'Deploy Allure Report #${{ github.run_number }} - ${{ github.sha }}'
 
+    - name: Wait for deployment to complete
+      if: always()
+      run: |
+        echo "Waiting 10 seconds for gh-pages deployment to complete..."
+        sleep 10
+
     - name: Update latest report and cleanup old reports
       if: always()
       run: |
@@ -144,18 +156,32 @@ jobs:
         git clone --depth=1 --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages-update
         cd gh-pages-update
 
-        # Update 'latest' directory to point to current report
-        rm -rf latest
-        cp -r ${{ github.run_number }} latest
+        # Check if current run directory exists
+        if [ -d "${{ github.run_number }}" ]; then
+          echo "Found run directory: ${{ github.run_number }}"
+          # Update 'latest' directory to point to current report
+          rm -rf latest
+          cp -r ${{ github.run_number }} latest
+          echo "Latest updated to run ${{ github.run_number }}"
+        else
+          echo "WARNING: Run directory ${{ github.run_number }} not found yet"
+          echo "Available directories:"
+          ls -1 | grep -E '^[0-9]+$' | sort -n
+          echo "Skipping latest update"
+        fi
 
         # Keep only last 10 reports (excluding 'latest' and 'history')
         echo "Cleaning up old reports, keeping last 10..."
         ls -1 | grep -E '^[0-9]+$' | sort -n | head -n -10 | xargs rm -rf || true
 
-        # Commit and push changes
+        # Commit and push changes if any
         git add -A
-        git commit -m "Update latest report and cleanup old reports" || echo "No changes to commit"
-        git push || echo "Nothing to push"
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update latest report and cleanup old reports"
+          git push
+        fi
 
     - name: Add report link to summary
       if: always()
