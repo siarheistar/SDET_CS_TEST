@@ -1,30 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Allure Test Reports</title>
+  <title>Test Reports - SDET C# Test Project</title>
+  <meta charset="utf-8">
   <style>
-    body { font-family: Arial; margin: 40px; }
-    h1 { color: #333; }
-    .report-list { list-style: none; padding: 0; }
-    .report-list li { margin: 10px 0; }
-    .report-list a {
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+    .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    .header p { font-size: 1.1em; opacity: 0.9; }
+    .table-container { padding: 40px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    th {
+      background: #f8f9fa;
+      padding: 15px;
+      text-align: left;
+      font-weight: 600;
+      color: #495057;
+      border-bottom: 2px solid #dee2e6;
+    }
+    td {
+      padding: 15px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    tr:hover { background: #f8f9fa; }
+    .badge {
       display: inline-block;
-      padding: 10px 20px;
-      background: #4CAF50;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+    .badge-success { background: #d4edda; color: #155724; }
+    .badge-warning { background: #fff3cd; color: #856404; }
+    .badge-danger { background: #f8d7da; color: #721c24; }
+    .btn {
+      display: inline-block;
+      padding: 8px 20px;
+      background: #667eea;
       color: white;
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 6px;
+      transition: all 0.3s;
     }
-    .report-list a:hover { background: #45a049; }
+    .btn:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+    }
   </style>
 </head>
 <body>
-  <h1>📊 Allure Test Reports</h1>
-  <ul class="report-list">
-    <li><a href="43/">Run #43</a></li>
-    <li><a href="41/">Run #41</a></li>
-    <li><a href="40/">Run #40</a></li>
-    <li><a href="38/">Run #38</a></li>
-  </ul>
+  <div class="container">
+    <div class="header">
+      <h1>🧪 SDET C# Test Reports</h1>
+      <p>Todo Application - Automated Test Results</p>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Run #</th>
+            <th>Date</th>
+            <th>Total Tests</th>
+            <th>Pass Rate</th>
+            <th>Status</th>
+            <th>Report</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#44</strong></td>
+            <td>44 3e848193940666a 255 ef53 4096 4096 18771278 4816847 4812751 9699328 8743558
+2025-11-13 20:11</td>
+            <td>25 tests</td>
+            <td><strong>100%</strong> (25/25)</td>
+            <td><span class="badge badge-success">✓ Passed</span></td>
+            <td><a href="44/" class="btn">View Report →</a></td>
+          </tr>
+          <tr>
+            <td><strong>#43</strong></td>
+            <td>43 3e848193940666a 255 ef53 4096 4096 18771278 4816847 4812751 9699328 8743558
+2025-11-13 20:11</td>
+            <td>25 tests</td>
+            <td><strong>100%</strong> (25/25)</td>
+            <td><span class="badge badge-success">✓ Passed</span></td>
+            <td><a href="43/" class="btn">View Report →</a></td>
+          </tr>
+          <tr>
+            <td><strong>#41</strong></td>
+            <td>41 3e848193940666a 255 ef53 4096 4096 18771278 4816847 4812751 9699328 8743558
+2025-11-13 20:11</td>
+            <td>25 tests</td>
+            <td><strong>100%</strong> (25/25)</td>
+            <td><span class="badge badge-success">✓ Passed</span></td>
+            <td><a href="41/" class="btn">View Report →</a></td>
+          </tr>
+          <tr>
+            <td><strong>#40</strong></td>
+            <td>40 3e848193940666a 255 ef53 4096 4096 18771278 4816847 4812751 9699328 8743558
+2025-11-13 20:11</td>
+            <td>25 tests</td>
+            <td><strong>100%</strong> (25/25)</td>
+            <td><span class="badge badge-success">✓ Passed</span></td>
+            <td><a href="40/" class="btn">View Report →</a></td>
+          </tr>
+          <tr>
+            <td><strong>#38</strong></td>
+            <td>38 3e848193940666a 255 ef53 4096 4096 18771278 4816846 4812750 9699328 8743558
+2025-11-13 20:11</td>
+            <td>25 tests</td>
+            <td><strong>100%</strong> (25/25)</td>
+            <td><span class="badge badge-success">✓ Passed</span></td>
+            <td><a href="38/" class="btn">View Report →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </body>
 </html>
