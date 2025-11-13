@@ -87,22 +87,15 @@ jobs:
         ref: gh-pages
         path: gh-pages
 
-    - name: Restore Allure history from latest report
+    - name: Restore Allure history
       if: always()
       run: |
-        # Try to restore history from the latest report subdirectory
-        if [ -d "gh-pages/latest/history" ]; then
-          echo "Restoring Allure history from latest report..."
-          mkdir -p allure-results/history
-          cp -r gh-pages/latest/history/* allure-results/history/
-          echo "History restored successfully from latest report"
-        elif [ -d "gh-pages/history" ]; then
-          echo "Restoring Allure history from old location..."
+        if [ -d "gh-pages/history" ]; then
+          echo "Restoring history..."
           mkdir -p allure-results/history
           cp -r gh-pages/history/* allure-results/history/
-          echo "History restored successfully from old location"
         else
-          echo "No previous history found (first run)"
+          echo "No previous history (first run)"
         fi
 
     - name: Install Allure
@@ -114,78 +107,81 @@ jobs:
         sudo ln -s /opt/allure/bin/allure /usr/local/bin/allure
         allure --version
 
-    - name: Merge with existing report data
-      if: always()
-      run: |
-        echo "Merging new test results with existing historical data..."
-
-        # If gh-pages exists, merge the test-cases and attachments
-        if [ -d "gh-pages/data" ]; then
-          echo "Found existing report data, merging..."
-
-          # Copy existing test-cases to allure-results before generation
-          if [ -d "gh-pages/data/test-cases" ]; then
-            echo "Copying existing test cases..."
-            mkdir -p allure-results/test-cases-archive
-            cp gh-pages/data/test-cases/*.json allure-results/test-cases-archive/ 2>/dev/null || true
-            echo "Existing test cases: $(ls -1 gh-pages/data/test-cases/ | wc -l)"
-          fi
-
-          # Copy existing attachments
-          if [ -d "gh-pages/data/attachments" ]; then
-            echo "Copying existing attachments..."
-            mkdir -p allure-results/attachments-archive
-            cp gh-pages/data/attachments/* allure-results/attachments-archive/ 2>/dev/null || true
-            echo "Existing attachments: $(ls -1 gh-pages/data/attachments/ | wc -l)"
-          fi
-        else
-          echo "No existing report data found (first run)"
-        fi
-
     - name: Generate Allure Report
       if: always()
       run: |
-        echo "Generating cumulative Allure report..."
         allure generate allure-results --clean -o allure-report
-        echo "Report generated successfully"
+        echo "Report generated for run #${{ github.run_number }}"
 
-        # Merge historical test-cases into the report
-        if [ -d "allure-results/test-cases-archive" ]; then
-          echo "Merging historical test cases into report..."
-          cp allure-results/test-cases-archive/*.json allure-report/data/test-cases/ 2>/dev/null || true
-        fi
-
-        # Merge historical attachments into the report
-        if [ -d "allure-results/attachments-archive" ]; then
-          echo "Merging historical attachments into report..."
-          cp allure-results/attachments-archive/* allure-report/data/attachments/ 2>/dev/null || true
-        fi
-
-        echo "Final report statistics:"
-        echo "  Test cases: $(ls -1 allure-report/data/test-cases/ | wc -l)"
-        echo "  Attachments: $(ls -1 allure-report/data/attachments/ | wc -l)"
-
-        # Add timestamp to help with cache invalidation
-        echo "<!-- Report generated at $(date -u +"%Y-%m-%d %H:%M:%S UTC") -->" >> allure-report/index.html
-
-    - name: Deploy unified report to gh-pages root
-      uses: peaceiris/actions-gh-pages@v4
+    - name: Deploy to subdirectory and update index
       if: always()
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: allure-report
-        publish_branch: gh-pages
-        keep_files: false  # Replace entire report each time
-        commit_message: 'Deploy Cumulative Allure Report - Run #${{ github.run_number }} - ${{ github.sha }}'
+      run: |
+        RUN_DIR="${{ github.run_number }}"
+
+        # Checkout gh-pages
+        git fetch origin gh-pages || true
+        git checkout gh-pages || git checkout --orphan gh-pages
+        git pull origin gh-pages || true
+
+        # Create run subdirectory
+        mkdir -p "$RUN_DIR"
+        cp -r allure-report/* "$RUN_DIR/"
+
+        # Create/update index.html
+        cat > index.html << 'EOF'
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Allure Test Reports</title>
+          <style>
+            body { font-family: Arial; margin: 40px; }
+            h1 { color: #333; }
+            .report-list { list-style: none; padding: 0; }
+            .report-list li { margin: 10px 0; }
+            .report-list a {
+              display: inline-block;
+              padding: 10px 20px;
+              background: #4CAF50;
+              color: white;
+              text-decoration: none;
+              border-radius: 4px;
+            }
+            .report-list a:hover { background: #45a049; }
+          </style>
+        </head>
+        <body>
+          <h1>📊 Allure Test Reports</h1>
+          <ul class="report-list">
+        EOF
+
+        # Add links for all run directories (newest first)
+        for dir in $(ls -d [0-9]* 2>/dev/null | sort -rn); do
+          echo "    <li><a href=\"$dir/\">Run #$dir</a></li>" >> index.html
+        done
+
+        cat >> index.html << 'EOF'
+          </ul>
+        </body>
+        </html>
+        EOF
+
+        # Copy history from latest run for next execution
+        if [ -d "$RUN_DIR/history" ]; then
+          mkdir -p history
+          cp -r "$RUN_DIR/history/"* history/
+        fi
+
+        # Commit and push
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "Deploy report for run #${{ github.run_number }}"
+        git push origin gh-pages
 
     - name: Add report link to summary
       if: always()
       run: |
         echo "## 📊 Allure Test Report" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "🔗 **Report URL:** https://siarheistar.github.io/SDET_CS_TEST/" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "📝 **Note:** Report will be available in ~1 minute after deployment completes." >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "📚 **History:** All test runs are accumulated with full logs, attachments, and clickable history." >> $GITHUB_STEP_SUMMARY
-        echo "📊 **Run #${{ github.run_number }}** results have been added to the cumulative report." >> $GITHUB_STEP_SUMMARY
+        echo "🔗 **Report URL:** https://siarheistar.github.io/SDET_CS_TEST/${{ github.run_number }}/" >> $GITHUB_STEP_SUMMARY
+        echo "🔗 **All Reports:** https://siarheistar.github.io/SDET_CS_TEST/" >> $GITHUB_STEP_SUMMARY
