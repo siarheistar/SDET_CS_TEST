@@ -113,6 +113,58 @@ jobs:
         allure generate allure-results --clean -o allure-report
         echo "Report generated for run #${{ github.run_number }}"
 
+    - name: Add navigation link to Allure report
+      if: always()
+      run: |
+        # Add custom CSS and navigation banner to Allure report
+        cat >> allure-report/styles.css << 'EOF'
+        .home-banner {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 12px 20px;
+          text-align: center;
+          z-index: 10000;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+        .home-banner a {
+          color: white;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 14px;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 6px 16px;
+          background: rgba(255,255,255,0.2);
+          border-radius: 6px;
+          transition: all 0.3s;
+        }
+        .home-banner a:hover {
+          background: rgba(255,255,255,0.3);
+          transform: translateY(-2px);
+        }
+        body { padding-top: 50px !important; }
+        EOF
+
+        # Inject banner into index.html
+        sed -i.bak '/<head>/a\
+        <link rel="stylesheet" href="styles.css">\
+        <script>\
+        window.addEventListener("DOMContentLoaded", function() {\
+          var banner = document.createElement("div");\
+          banner.className = "home-banner";\
+          banner.innerHTML = '"'"'<a href="../">← Back to All Test Reports</a>'"'"';\
+          document.body.insertBefore(banner, document.body.firstChild);\
+        });\
+        </script>' allure-report/index.html
+
+        rm -f allure-report/index.html.bak
+
     - name: Deploy to subdirectory and update index
       if: always()
       run: |
