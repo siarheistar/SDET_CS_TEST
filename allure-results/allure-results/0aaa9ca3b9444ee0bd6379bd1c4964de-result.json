@@ -1,0 +1,49 @@
+{
+  "uuid": "91e0c80e-3392-4385-a1ad-f10e7d68b403",
+  "historyId": "8bcc4f584262c2613a59acb5c19d46dd",
+  "testCaseId": "c3135326992df384c42f2a89b1a357db",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UnitTests.TodoAppUnitTests.GetCompletedTodos_ShouldReturnOnlyCompletedTodos()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UnitTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "GetCompletedTodos_ShouldReturnOnlyCompletedTodos"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoAppUnitTests"
+    },
+    {
+      "name": "suite",
+      "value": "Unit Tests"
+    }
+  ],
+  "links": [],
+  "name": "GetCompletedTodos_ShouldReturnOnlyCompletedTodos",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1763043352935,
+  "stop": 1763043352936
+}

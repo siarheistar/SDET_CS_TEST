@@ -1,0 +1,140 @@
+{
+  "uuid": "286c4a67-ecaf-422f-8826-de69ed9fbaba",
+  "historyId": "ae557c79f9278ec21e7ed0a5110571cd",
+  "testCaseId": "554e6f411d974cb764af6612d9fa07a7",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.FilterActive_ShouldShowOnlyActiveTodos()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#3"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "FilterActive_ShouldShowOnlyActiveTodos"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "FilterActive_ShouldShowOnlyActiveTodos",
+  "status": "passed",
+  "stage": "finished",
+  "description": "Verify that the Active filter shows only active todos",
+  "steps": [
+    {
+      "name": "Setup test environment",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Initial Page State",
+          "source": "3ff9fd4b-abfc-4911-a68e-be1be7201670-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043346346,
+      "stop": 1763043346517
+    },
+    {
+      "name": "Add one active and one completed todo",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Before filtering",
+          "source": "55688b8d-bd25-4167-9ef8-8f849eda7490-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043346518,
+      "stop": 1763043346926
+    },
+    {
+      "name": "Click Active filter",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "After applying Active filter",
+          "source": "d0c1ae87-91e6-4a9d-891c-51ec6674ec29-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043346926,
+      "stop": 1763043347188
+    },
+    {
+      "name": "Count visible todos",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043347188,
+      "stop": 1763043347189
+    },
+    {
+      "name": "Get visible todo text",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043347189,
+      "stop": 1763043347191
+    },
+    {
+      "name": "Verify only one active todo is visible",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043347191,
+      "stop": 1763043347191
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Final Page State",
+      "source": "defa642f-d656-4603-b199-6a65f2c6df04-attachment.png",
+      "type": "image/png"
+    },
+    {
+      "name": "Test Execution Video",
+      "source": "04ba112d-c782-4425-9ab6-9ee031387c84-attachment.webm",
+      "type": "video/webm"
+    }
+  ],
+  "parameters": [],
+  "start": 1763043346288,
+  "stop": 1763043347414
+}

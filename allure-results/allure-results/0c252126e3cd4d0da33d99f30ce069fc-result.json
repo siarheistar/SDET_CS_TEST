@@ -1,0 +1,124 @@
+{
+  "uuid": "bc572440-956d-4dcc-b945-2908221485fe",
+  "historyId": "ab820269d2d7746b89d78d1ab9cbff07",
+  "testCaseId": "58c986099331532f86c08061e5e3d651",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.TodoCounter_AfterCompleting_ShouldDecrease()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#3"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TodoCounter_AfterCompleting_ShouldDecrease"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "TodoCounter_AfterCompleting_ShouldDecrease",
+  "status": "passed",
+  "stage": "finished",
+  "description": "Verify that the todo counter decreases after completing a todo",
+  "steps": [
+    {
+      "name": "Setup test environment",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Initial Page State",
+          "source": "6d6eb4b1-f130-4114-8a1e-f4909f805239-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043350243,
+      "stop": 1763043350419
+    },
+    {
+      "name": "Add two todos",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043350419,
+      "stop": 1763043350602
+    },
+    {
+      "name": "Complete first todo",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "After completing first todo",
+          "source": "10779971-0bbb-4f9f-835c-de77e471d0cf-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043350602,
+      "stop": 1763043350874
+    },
+    {
+      "name": "Get counter text",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043350874,
+      "stop": 1763043350876
+    },
+    {
+      "name": "Verify counter shows '1 task left'",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043350876,
+      "stop": 1763043350877
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Final Page State",
+      "source": "7830f4e6-6757-47b0-baab-eb95553c41b1-attachment.png",
+      "type": "image/png"
+    },
+    {
+      "name": "Test Execution Video",
+      "source": "2726a1c0-4f06-45ff-b85a-93c1417302b3-attachment.webm",
+      "type": "video/webm"
+    }
+  ],
+  "parameters": [],
+  "start": 1763043350183,
+  "stop": 1763043351112
+}

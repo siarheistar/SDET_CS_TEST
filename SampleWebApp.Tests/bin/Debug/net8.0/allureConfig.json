@@ -1,0 +1,25 @@
+{
+  "allure": {
+    "directory": "allure-results",
+    "links": [
+      //"https://github.com/yourusername/todo-app",
+      "https://github.com/siarheistar/SDET_CS_TEST"
+    ]
+  },
+  "specflow": {
+    "stepArguments": {
+      "convertToParameters": true
+    },
+    "grouping": {
+      "suites": {
+        "parentSuite": "^parentSuite:(.+)",
+        "suite": "^suite:(.+)",
+        "subSuite": "^subSuite:(.+)"
+      },
+      "behaviors": {
+        "epic": "^epic:(.+)",
+        "story": "^story:(.+)"
+      }
+    }
+  }
+}

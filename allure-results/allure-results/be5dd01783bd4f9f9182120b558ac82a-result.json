@@ -1,0 +1,57 @@
+{
+  "uuid": "57b92095-3fc9-455f-9ae1-8e57b98cc136",
+  "historyId": "65c9d2bad5419e473b7f1b561a6d06ae",
+  "testCaseId": "1f9b0a742505bc142c0a84cdaeeae1af",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.TodoCounter_ShouldDisplayCorrectCount()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#1"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TodoCounter_ShouldDisplayCorrectCount"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "TodoCounter_ShouldDisplayCorrectCount",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "Microsoft.Playwright.PlaywrightException : Executable doesn't exist at /Users/sergei/Library/Caches/ms-playwright/chromium-1105/chrome-mac/Chromium.app/Contents/MacOS/Chromium\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     pwsh bin/Debug/netX/playwright.ps1 install             ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+    "trace": "   at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 206\n   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal) in /_/src/Playwright/Transport/Connection.cs:line 526\n   at Microsoft.Playwright.Core.BrowserType.LaunchAsync(BrowserTypeLaunchOptions options) in /_/src/Playwright/Core/BrowserType.cs:line 56\n   at Microsoft.Playwright.NUnit.BrowserService.CreateBrowser(IBrowserType browserType) in /_/src/Playwright.NUnit/BrowserService.cs:line 55\n   at Microsoft.Playwright.NUnit.BrowserService.<>c__DisplayClass5_0.<<Register>b__0>d.MoveNext() in /_/src/Playwright.NUnit/BrowserService.cs:line 45\n--- End of stack trace from previous location ---\n   at Microsoft.Playwright.NUnit.WorkerAwareTest.RegisterService[T](String name, Func`1 factory) in /_/src/Playwright.NUnit/WorkerAwareTest.cs:line 55\n   at Microsoft.Playwright.NUnit.BrowserTest.BrowserSetup() in /_/src/Playwright.NUnit/BrowserTest.cs:line 46\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()\n   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](Func`1 invoke)\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUpOrTearDownMethod(TestExecutionContext context, IMethodInfo method)\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUp(TestExecutionContext context)\n   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.<>c__DisplayClass1_0.<Execute>b__0()\n   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)"
+  },
+  "stage": "finished",
+  "description": "Verify that the todo counter displays the correct count",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1763043261726,
+  "stop": 1763043261728
+}

@@ -1,35 +1,27 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>Allure Report</title>
-    <link rel="favicon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="plugin/screen-diff/styles.css">
+  <title>Allure Test Reports</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    h1 { color: #333; }
+    .report-list { list-style: none; padding: 0; }
+    .report-list li { margin: 10px 0; }
+    .report-list a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .report-list a:hover { background: #45a049; }
+  </style>
 </head>
 <body>
-    <div id="alert"></div>
-    <div id="content">
-        <span class="spinner">
-            <span class="spinner__circle"></span>
-        </span>
-    </div>
-    <div id="popup"></div>
-    <script src="app.js"></script>
-    <script src="plugin/behaviors/index.js"></script>
-    <script src="plugin/packages/index.js"></script>
-    <script src="plugin/screen-diff/index.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVWC4GKEYS"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FVWC4GKEYS', {
-          'allureVersion': 'dev',
-          'reportUuid': '0988b843-c8e1-4f43-b350-372a064e6f6c',
-          'single_file': false
-        });
-    </script>
+  <h1>📊 Allure Test Reports</h1>
+  <ul class="report-list">
+    <li><a href="38/">Run #38</a></li>
+  </ul>
 </body>
 </html>
-<!-- Report generated at 2025-11-13 19:34:41 UTC -->

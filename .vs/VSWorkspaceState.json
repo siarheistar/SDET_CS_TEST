@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\gherkin SampleWebApp.Tests",
+    "\\gherkin SampleWebApp.Tests\\BDDTests",
+    "\\gherkin SampleWebApp.Tests\\BDDTests\\Features",
+    "\\SampleWebApp"
+  ],
+  "PreviewInSolutionExplorer": false
+}

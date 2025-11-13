@@ -1,0 +1,12 @@
+{
+  "uuid": "e881f8cb-af29-488d-bc7c-d0de2a70bb08",
+  "name": "SampleWebApp.Tests.UnitTests.TodoAppUnitTests.ClearCompleted_ShouldRemoveOnlyCompletedTodos",
+  "children": [
+    "f93b1512-1d67-407f-9753-a0eb27a94a25"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1763043352931,
+  "stop": 1763043352932
+}

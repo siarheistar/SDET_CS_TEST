@@ -1,0 +1,130 @@
+{
+  "uuid": "195b14cf-57be-474d-b760-79ff63b40643",
+  "historyId": "2dc9f533a8ca52bc69122da61a2126cd",
+  "testCaseId": "eeb372b37f2026764bf3719d56ebeb59",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.DeleteTodo_ShouldRemoveFromList()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#3"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "DeleteTodo_ShouldRemoveFromList"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "DeleteTodo_ShouldRemoveFromList",
+  "status": "passed",
+  "stage": "finished",
+  "description": "Verify that deleting a todo removes it from the list",
+  "steps": [
+    {
+      "name": "Setup test environment",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Initial Page State",
+          "source": "5e0a1e62-3e5b-41d4-9339-6505a0a009e3-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043345347,
+      "stop": 1763043345515
+    },
+    {
+      "name": "Add a todo 'Delete me'",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Todo added",
+          "source": "e94cf87e-3c91-4201-a3cc-94335379bebb-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043345515,
+      "stop": 1763043345788
+    },
+    {
+      "name": "Click delete button",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "After clicking delete",
+          "source": "d50dd5ab-3141-4827-a00e-6adcce0c6622-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043345788,
+      "stop": 1763043346053
+    },
+    {
+      "name": "Count remaining todos",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043346053,
+      "stop": 1763043346055
+    },
+    {
+      "name": "Verify todo count is 0",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043346055,
+      "stop": 1763043346055
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Final Page State",
+      "source": "403dacaf-12bd-4fa6-a2e7-bc7300b8e983-attachment.png",
+      "type": "image/png"
+    },
+    {
+      "name": "Test Execution Video",
+      "source": "f899a851-dabe-45d8-8111-7861af77d650-attachment.webm",
+      "type": "video/webm"
+    }
+  ],
+  "parameters": [],
+  "start": 1763043345294,
+  "stop": 1763043346288
+}

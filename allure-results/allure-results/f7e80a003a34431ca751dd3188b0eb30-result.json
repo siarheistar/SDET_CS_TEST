@@ -1,0 +1,124 @@
+{
+  "uuid": "7891b989-8519-4204-807d-98d125b650bf",
+  "historyId": "9109a3bed2acc7b4a285075222ab8108",
+  "testCaseId": "f060c662bc6fae155fd014d29a5d4a45",
+  "fullName": "SampleWebApp.Tests:SampleWebApp.Tests.UITests.TodoUITests.AddTodo_PressingEnter_ShouldAddTodo()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#3"
+    },
+    {
+      "name": "host",
+      "value": "MacBookPro14New-3"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "SampleWebApp.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddTodo_PressingEnter_ShouldAddTodo"
+    },
+    {
+      "name": "testClass",
+      "value": "TodoUITests"
+    },
+    {
+      "name": "suite",
+      "value": "UI Tests"
+    }
+  ],
+  "links": [],
+  "name": "AddTodo_PressingEnter_ShouldAddTodo",
+  "status": "passed",
+  "stage": "finished",
+  "description": "Verify that pressing Enter key adds a todo",
+  "steps": [
+    {
+      "name": "Setup test environment",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Initial Page State",
+          "source": "75f6ec38-b752-4a04-b9cd-ad82923162d7-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043340788,
+      "stop": 1763043341039
+    },
+    {
+      "name": "Enter todo text 'Test task'",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043341040,
+      "stop": 1763043341063
+    },
+    {
+      "name": "Press Enter key",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "After pressing Enter",
+          "source": "fbbfcecf-4fe9-49c0-aa90-bee257a6da8d-attachment.png",
+          "type": "image/png"
+        }
+      ],
+      "parameters": [],
+      "start": 1763043341063,
+      "stop": 1763043341327
+    },
+    {
+      "name": "Count todo items",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043341328,
+      "stop": 1763043341330
+    },
+    {
+      "name": "Verify todo count is 1",
+      "status": "passed",
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1763043341330,
+      "stop": 1763043341331
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Final Page State",
+      "source": "afe931f1-2a52-496f-ab50-16a651e327c9-attachment.png",
+      "type": "image/png"
+    },
+    {
+      "name": "Test Execution Video",
+      "source": "160b49af-47bf-4c6c-8093-12bfea9c0ddc-attachment.webm",
+      "type": "video/webm"
+    }
+  ],
+  "parameters": [],
+  "start": 1763043340323,
+  "stop": 1763043341561
+}

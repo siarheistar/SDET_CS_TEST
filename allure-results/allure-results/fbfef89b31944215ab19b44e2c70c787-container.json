@@ -1,0 +1,12 @@
+{
+  "uuid": "e270022d-fb03-4415-bad2-4f639794a9cd",
+  "name": "SampleWebApp.Tests.UITests.TodoUITests.ClearCompleted_ShouldRemoveCompletedTodos",
+  "children": [
+    "6b47af41-5ef8-4076-9a23-0efe2511279a"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1763043261710,
+  "stop": 1763043261712
+}

@@ -1,0 +1,12 @@
+{
+  "uuid": "f03627dc-57b8-4237-92dd-3cfb362f8ac5",
+  "name": "SampleWebApp.Tests.UITests.TodoUITests.AddTodo_PressingEnter_ShouldAddTodo",
+  "children": [
+    "7891b989-8519-4204-807d-98d125b650bf"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1763043340323,
+  "stop": 1763043341569
+}
