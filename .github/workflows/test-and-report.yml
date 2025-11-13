@@ -129,6 +129,28 @@ jobs:
         echo "Test case files generated:"
         ls -1 allure-report/data/test-cases/ | head -10
 
+    - name: Copy historical test cases for clickable history
+      if: always()
+      run: |
+        echo "Copying historical test case files to make history links clickable..."
+
+        # Find all test-case directories from previous runs in gh-pages
+        if [ -d "gh-pages" ]; then
+          # Get list of all run directories (numeric directories)
+          for run_dir in gh-pages/*/data/test-cases; do
+            if [ -d "$run_dir" ]; then
+              echo "Copying test cases from: $run_dir"
+              # Copy all test case files to current report
+              cp -n "$run_dir"/*.json allure-report/data/test-cases/ 2>/dev/null || true
+            fi
+          done
+
+          echo "Total test case files after merging history:"
+          ls -1 allure-report/data/test-cases/ | wc -l
+        else
+          echo "No previous gh-pages found, skipping historical test case copy"
+        fi
+
     - name: Deploy report to unique subdirectory
       uses: peaceiris/actions-gh-pages@v4
       if: always()
