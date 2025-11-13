@@ -69,6 +69,8 @@ jobs:
     - name: Move allure results to project root
       run: |
         if [ -d "SampleWebApp.Tests/bin/Release/net8.0/allure-results" ]; then
+          # Remove any existing allure-results directory first
+          rm -rf ./allure-results
           mv SampleWebApp.Tests/bin/Release/net8.0/allure-results ./allure-results
           echo "Allure results moved to project root"
           echo "Total result files: $(find allure-results -name '*.json' | wc -l)"
@@ -121,21 +123,48 @@ jobs:
         echo "Test case files generated:"
         ls -1 allure-report/data/test-cases/ | head -10
 
-    - name: Deploy to GitHub Pages
+    - name: Deploy report to unique subdirectory
       uses: peaceiris/actions-gh-pages@v4
       if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: allure-report
         publish_branch: gh-pages
-        keep_files: false
-        commit_message: 'Deploy Allure Report - ${{ github.run_number }} - ${{ github.sha }}'
+        keep_files: true  # Keep previous reports for history
+        destination_dir: ${{ github.run_number }}  # Deploy to run number directory
+        commit_message: 'Deploy Allure Report #${{ github.run_number }} - ${{ github.sha }}'
+
+    - name: Update latest report and cleanup old reports
+      if: always()
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+        # Clone gh-pages branch
+        git clone --depth=1 --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages-update
+        cd gh-pages-update
+
+        # Update 'latest' directory to point to current report
+        rm -rf latest
+        cp -r ${{ github.run_number }} latest
+
+        # Keep only last 10 reports (excluding 'latest' and 'history')
+        echo "Cleaning up old reports, keeping last 10..."
+        ls -1 | grep -E '^[0-9]+$' | sort -n | head -n -10 | xargs rm -rf || true
+
+        # Commit and push changes
+        git add -A
+        git commit -m "Update latest report and cleanup old reports" || echo "No changes to commit"
+        git push || echo "Nothing to push"
 
     - name: Add report link to summary
       if: always()
       run: |
         echo "## 📊 Allure Test Report" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "🔗 **Report URL:** https://siarheistar.github.io/SDET_CS_TEST/" >> $GITHUB_STEP_SUMMARY
+        echo "🔗 **Latest Report:** https://siarheistar.github.io/SDET_CS_TEST/latest/" >> $GITHUB_STEP_SUMMARY
+        echo "🔗 **This Run (#${{ github.run_number }}):** https://siarheistar.github.io/SDET_CS_TEST/${{ github.run_number }}/" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "Report  will be available in ~1 minute after deployment completes." >> $GITHUB_STEP_SUMMARY
+        echo "📝 **Note:** Reports will be available in ~1 minute after deployment completes." >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "📚 **History:** Last 10 reports are preserved with full logs and attachments." >> $GITHUB_STEP_SUMMARY
